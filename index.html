@@ -24,6 +24,28 @@
             return userChoice;
         }
 
+        function playRound(){
+            let myChoice = getUserChoice()
+            let cChoice = getComputerChoice()
+            if ((myChoice == "paper" && cChoice =="scissors") ||
+                (myChoice == "rock" && cChoice =="paper") ||
+                (myChoice == "scissors" && cChoice =="rock")
+                ){
+                    console.log("Computer Wins")
+                }else if(
+                (cChoice == "paper" && myChoice =="scissors") ||
+                (cChoice == "rock" && myChoice =="paper") ||
+                (cChoice == "scissors" && myChoice =="rock")){
+                    console.log("YOU Winnnnnnn")
+                }else if(
+                (cChoice == "scissors" && myChoice =="scissors") ||
+                (cChoice == "rock" && myChoice =="rock") ||
+                (cChoice == "paper" && myChoice =="paper")){
+                    console.log("DRAWWW")
+                }else { console.log("something goes wrong")}
+        }
+
+        playRound()
     </script>
 </body>
 </html>
