@@ -32,17 +32,24 @@
                 (myChoice == "scissors" && cChoice =="rock")
                 ){
                     console.log("Computer Wins")
+                    playRound()
                 }else if(
                 (cChoice == "paper" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="paper") ||
                 (cChoice == "scissors" && myChoice =="rock")){
-                    console.log("YOU Winnnnnnn")
+                    console.warn("YOU Winnnnnnn")
+                    playRound()
                 }else if(
                 (cChoice == "scissors" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="rock") ||
                 (cChoice == "paper" && myChoice =="paper")){
                     console.log("DRAWWW")
-                }else { console.log("something goes wrong")}
+                    playRound()
+                }else{ 
+                    console.error("Something goes wrong, Please Try Again")
+                    playRound()
+
+            }
         }
 
         playRound()
