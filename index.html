@@ -20,38 +20,44 @@
         function getUserChoice(){
             // Prompt the user choice
             let userInput = prompt("Please, enter your choice!")
+            // Convert the userinput to a lower case
             let userChoice = userInput.toLocaleLowerCase();
             return userChoice;
         }
-
+        // This funcion is going to invoke the functions below
         function playRound(){
             let myChoice = getUserChoice()
             let cChoice = getComputerChoice()
+            // Check for computer wins
             if ((myChoice == "paper" && cChoice =="scissors") ||
                 (myChoice == "rock" && cChoice =="paper") ||
                 (myChoice == "scissors" && cChoice =="rock")
                 ){
                     console.log("Computer Wins")
                     playRound()
+                // check for the player win    
                 }else if(
                 (cChoice == "paper" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="paper") ||
                 (cChoice == "scissors" && myChoice =="rock")){
                     console.warn("YOU Winnnnnnn")
                     playRound()
+                // check for draww    
                 }else if(
                 (cChoice == "scissors" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="rock") ||
                 (cChoice == "paper" && myChoice =="paper")){
                     console.log("DRAWWW")
                     playRound()
+                // if the input user does not much any of the option above
+                // that wiil log and error and re-run the whole function    
                 }else{ 
-                    console.error("Something goes wrong, Please Try Again")
+                    console.error("Something goes wrong, Please Try Again!")
                     playRound()
 
             }
         }
-
+        // The game function invocation
         playRound()
     </script>
 </body>
