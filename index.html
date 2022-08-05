@@ -16,13 +16,12 @@
             let choice = words[num];
             return choice;
         }
-        
+        // Prompt the user choice and 
         function getUserChoice(){
-            // Prompt the user choice
-            let userInput = prompt("Please, enter your choice!")
-            // Convert the userinput to a lower case
-            let userChoice = userInput.toLocaleLowerCase();
-            return userChoice;
+            let UserChoice = "";
+            let userInput = prompt("Please make your choice!");
+            UserChoice = userInput.toLocaleLowerCase();
+            return UserChoice;
         }
         // This funcion is going to invoke the functions below
         function playRound(){
