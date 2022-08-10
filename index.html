@@ -6,7 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rcok Game</title>
 </head>
+<style>
+    button {
+    width: 200px;
+    height: 200px;
+    }
+</style>
 <body>
+
+<button  class="mybt" id="bt1">Rock</button>
+<button  class="mybt" id="bt2">Paper</button>
+<button  class="mybt" id="bt3">Scissors</button>
+
+
+
+
+
+
+
+
+
+
     <script>
         // Add globl variable array for choices
         const words = ["rock", "paper", "scissors"];
@@ -16,48 +36,61 @@
             let choice = words[num];
             return choice;
         }
+        // Add event listner on buttons
+        let myChoice = "";
+        const bt1 = document.getElementById("bt1")
+        bt1.addEventListener("click", function(){
+            myChoice = "rock";
+            playRound(myChoice)
+            
+        })
+
+        const bt2 = document.getElementById("bt2")
+        bt2.addEventListener("click", function(){
+            myChoice = "paper";
+            playRound(myChoice)
+        })
+
+        const bt3 = document.getElementById("bt3")
+        bt3.addEventListener("click", function(){
+            myChoice = "rock";
+            playRound(myChoice)
+        })
+
         // Prompt the user choice and 
-        function getUserChoice(){
-            let UserChoice = "";
-            let userInput = prompt("Please make your choice!");
-            UserChoice = userInput.toLocaleLowerCase();
-            return UserChoice;
-        }
         // This funcion is going to invoke the functions below
-        function playRound(){
-            let myChoice = getUserChoice()
+        function playRound(myChoice){
             let cChoice = getComputerChoice()
-            // Check for computer wins
             if ((myChoice == "paper" && cChoice =="scissors") ||
                 (myChoice == "rock" && cChoice =="paper") ||
                 (myChoice == "scissors" && cChoice =="rock")
                 ){
-                    console.log("Computer Wins")
-                    playRound()
+                    alert("Computer Wins")
+                    
                 // check for the player win    
                 }else if(
                 (cChoice == "paper" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="paper") ||
                 (cChoice == "scissors" && myChoice =="rock")){
-                    console.warn("YOU Winnnnnnn")
-                    playRound()
+                    alert("YOU Winnnnnnn")
+                    
                 // check for draww    
                 }else if(
                 (cChoice == "scissors" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="rock") ||
                 (cChoice == "paper" && myChoice =="paper")){
-                    console.log("DRAWWW")
-                    playRound()
+                    alert("DRAWWW")
+                    
                 // if the input user does not much any of the option above
                 // that wiil log and error and re-run the whole function    
                 }else{ 
                     console.error("Something goes wrong, Please Try Again!")
-                    playRound()
+                    
 
             }
         }
-        // The game function invocation
-        playRound()
+
+        
     </script>
 </body>
 </html>
