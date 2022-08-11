@@ -7,26 +7,44 @@
     <title>Rcok Game</title>
 </head>
 <style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+    }
+
     button {
     width: 200px;
     height: 200px;
+    font-size: 2.2rem;
     }
 
     .myScreen{
         background-color: red;
         width: 600px;
         height: 200px;
+        display: block;
+        text-align: center;
+    }
+
+    nav {
+        height: 200px;
     }
 </style>
 <body>
+    <nav>
 
-<button  class="mybt" id="bt1">Rock</button>
-<button  class="mybt" id="bt2">Paper</button>
-<button  class="mybt" id="bt3">Scissors</button>
+    </nav>
 
-
-<div class="myScreen">
-
+<div class="container">
+    <button  class="mybt" id="bt1">Rock</button>
+    <button  class="mybt" id="bt2">Paper</button>
+    <button  class="mybt" id="bt3">Scissors</button>
+    
+    
+    <div class="myScreen">
+     <p>Score</p>
+    </div>
 </div>
 
 
