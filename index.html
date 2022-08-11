@@ -11,6 +11,12 @@
     width: 200px;
     height: 200px;
     }
+
+    .myScreen{
+        background-color: red;
+        width: 600px;
+        height: 200px;
+    }
 </style>
 <body>
 
@@ -19,7 +25,9 @@
 <button  class="mybt" id="bt3">Scissors</button>
 
 
+<div class="myScreen">
 
+</div>
 
 
 
@@ -56,16 +64,21 @@
             myChoice = "rock";
             playRound(myChoice)
         })
-
+        const myScreen = document.querySelector(".myScreen")
+        console.log(myScreen)
+        
         // Prompt the user choice and 
         // This funcion is going to invoke the functions below
         function playRound(myChoice){
+            let myScreen = document.querySelector(".myScreen")
             let cChoice = getComputerChoice()
             if ((myChoice == "paper" && cChoice =="scissors") ||
                 (myChoice == "rock" && cChoice =="paper") ||
                 (myChoice == "scissors" && cChoice =="rock")
                 ){
                     alert("Computer Wins")
+                    myScreen.textContent = "Computer Wins"
+                    body.appendChild(myScreen)
                     
                 // check for the player win    
                 }else if(
@@ -73,6 +86,7 @@
                 (cChoice == "rock" && myChoice =="paper") ||
                 (cChoice == "scissors" && myChoice =="rock")){
                     alert("YOU Winnnnnnn")
+                    myScreen.textContent = "YOU Winnnnnnn"
                     
                 // check for draww    
                 }else if(
@@ -80,6 +94,7 @@
                 (cChoice == "rock" && myChoice =="rock") ||
                 (cChoice == "paper" && myChoice =="paper")){
                     alert("DRAWWW")
+                    myScreen.textContent = "DRAWWWWW"
                     
                 // if the input user does not much any of the option above
                 // that wiil log and error and re-run the whole function    
