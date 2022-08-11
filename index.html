@@ -76,7 +76,6 @@
                 (myChoice == "rock" && cChoice =="paper") ||
                 (myChoice == "scissors" && cChoice =="rock")
                 ){
-                    alert("Computer Wins")
                     myScreen.textContent = "Computer Wins"
                     body.appendChild(myScreen)
                     
@@ -85,16 +84,17 @@
                 (cChoice == "paper" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="paper") ||
                 (cChoice == "scissors" && myChoice =="rock")){
-                    alert("YOU Winnnnnnn")
                     myScreen.textContent = "YOU Winnnnnnn"
+                    body.appendChild(myScreen)
                     
                 // check for draww    
                 }else if(
                 (cChoice == "scissors" && myChoice =="scissors") ||
                 (cChoice == "rock" && myChoice =="rock") ||
                 (cChoice == "paper" && myChoice =="paper")){
-                    alert("DRAWWW")
+                    
                     myScreen.textContent = "DRAWWWWW"
+                    body.appendChild(myScreen)
                     
                 // if the input user does not much any of the option above
                 // that wiil log and error and re-run the whole function    
